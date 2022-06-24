@@ -68,6 +68,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_masked_text",
+      "rootUri": "file:///C:/Users/Takke/OneDrive/Documentos/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_masked_text-0.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "1.23"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///C:/Users/Takke/OneDrive/Documentos/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.0.3",
       "packageUri": "lib/",
@@ -76,6 +82,12 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///C:/Users/Takke/OneDrive/Documentos/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/Takke/OneDrive/Documentos/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -194,7 +206,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-06-24T14:24:04.783533Z",
+  "generated": "2022-06-24T17:00:59.280742Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }
