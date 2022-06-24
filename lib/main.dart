@@ -1,3 +1,5 @@
+// @dart=2.9
+
 import 'package:flutter/material.dart';
 import 'package:risparapp/UserInfoScreen/UserInfoScreen.dart';
 
@@ -6,7 +8,7 @@ void main() {
 }
 
 class RisparApp extends StatelessWidget {
-  const RisparApp({Key? key}) : super(key: key);
+  const RisparApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

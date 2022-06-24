@@ -14,3 +14,13 @@ const String userInfoDescriptionLabel = "Crédito rápido, fácil e seguro! :)";
 const String userInfoDefaultButtonLabel = "Continuar";
 const String userInfoEmailError = "E-mail inválido.";
 const String userInfoNameError = "Nome inválido.";
+
+// Credit selection screen
+const String creditSelectionTitleLabel = "De quanto ";
+const String creditSelectionSubTitleLabel = "você precisa?";
+const String creditSelectionDescriptionFirstLabel = "Insira um valor entre ";
+const String creditSelectionDescriptionSecondLabel = "R\$500";
+const String creditSelectionDescriptionThirdLabel = " a ";
+const String creditSelectionDescriptionFourthLabel = "R\$300.000";
+const String creditSelectionInputLabel = "Digite o valor do crédito";
+const String creditSelectionDefaultButtonLabel = "Continuar";
