@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:risparapp/Widgets/DefaultSubmitButton.dart';
 
+import '../CreditSelectionPager/CreditSelectionPager.dart';
 import '../strings.dart';
 
 class UserInfoScreen extends StatefulWidget {
@@ -25,6 +26,7 @@ class UserInfoScreenState extends State<UserInfoScreen> {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
     screenOrientation = MediaQuery.of(context).orientation;
+
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -124,8 +126,14 @@ class UserInfoScreenState extends State<UserInfoScreen> {
     );
   }
 
-  buildUserScreenInput(String? title, String? boldTitle, String inputHint,
-      TextEditingController _controller, bool _validator, bool emailInput) {
+  buildUserScreenInput(
+    String? title,
+    String? boldTitle,
+    String inputHint,
+    TextEditingController _controller,
+    bool _validator,
+    bool emailInput,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(
         top: 25.0,
@@ -178,9 +186,16 @@ class UserInfoScreenState extends State<UserInfoScreen> {
       null,
       const TextStyle(fontSize: 19),
       () {
-        validateName();
-        validateEmail();
-        //TODO Navigate to next screen.
+        bool nameValidation = validateName();
+        bool emailValidation = validateEmail();
+        if (nameValidation && emailValidation) {
+          Navigator.push(
+            context,
+            CupertinoPageRoute(
+              builder: (context) => CreditSelectionPager(),
+            ),
+          );
+        }
       },
     );
   }
@@ -190,11 +205,15 @@ class UserInfoScreenState extends State<UserInfoScreen> {
       setState(() {
         _nameValidation = false;
       });
+      return false;
     } else if (_nameController.text.length >= 3 && _nameValidation == false) {
       setState(() {
         _nameValidation = true;
       });
+      return true;
     }
+
+    return _nameValidation;
   }
 
   validateEmail() {
@@ -204,10 +223,14 @@ class UserInfoScreenState extends State<UserInfoScreen> {
       setState(() {
         _emailValidation = true;
       });
+      return true;
     } else if (isEmailValid == false && _emailValidation == true) {
       setState(() {
         _emailValidation = false;
       });
+      return false;
     }
+
+    return _emailValidation;
   }
 }
