@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:risparapp/CreditSelectionScreen/CreditSelectionScreen.dart';
 
+import '../FinishSelectionScreen/FinishSelectionScreen.dart';
+
 class CreditSelectionPager extends StatefulWidget {
   @override
   CreditSelectionPagerState createState() => CreditSelectionPagerState();
@@ -15,6 +17,7 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
   late double screenWidth;
   late double screenHeight;
   late Orientation screenOrientation;
+  double selectedValue = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -47,27 +50,38 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
       ),
       body: PageView(
         controller: _controller,
+        allowImplicitScrolling: false,
         children: [
           CreditSelectionScreen(
-            submitCreditRequest,
+            onCreditSelection,
           ),
+          FinishSelectionScreen(
+            selectedValue,
+            submitCreditRequest,
+          )
         ],
       ),
     );
   }
 
-  submitCreditRequest(double? value) {
+  onCreditSelection(double? value) {
     if (value != null) {
       setState(() {
         _controller.nextPage(
-          duration: const Duration(seconds: 1),
-          curve: Curves.bounceIn,
+          duration: const Duration(
+            milliseconds: 500,
+          ),
+          curve: Curves.easeIn,
         );
-      });
-      setState(() {
         progressIndicator = 0.6;
+        selectedValue = value;
       });
     }
+  }
+
+  submitCreditRequest(double parcelValue, double warrantyValue) {
+    print(
+        "TODO REQUEST(parcelValue = ${parcelValue} & warrantyValue = ${warrantyValue})\n");
   }
 
   removeProgress() {
@@ -76,8 +90,10 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
     } else {
       setState(() {
         _controller.previousPage(
-          duration: const Duration(seconds: 1),
-          curve: Curves.bounceOut,
+          duration: const Duration(
+            milliseconds: 500,
+          ),
+          curve: Curves.ease,
         );
       });
       if (progressIndicator == 0.6) {
