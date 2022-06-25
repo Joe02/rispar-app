@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:risparapp/Widgets/CustomSliderWithSubTitles.dart';
-import 'package:risparapp/Widgets/DefaultSubmitButton.dart';
+import 'package:risparapp/Ui/Widgets/CustomSliderWithSubTitles.dart';
+import 'package:risparapp/Ui/Widgets/DefaultSubmitButton.dart';
 
-import '../strings.dart';
+import '../../strings.dart';
+
 
 class FinishSelectionScreen extends StatefulWidget {
   double chosenValue;
-  dynamic Function(double, double) onClickAction;
+  dynamic Function(double, double, bool) onClickAction;
 
   FinishSelectionScreen(this.chosenValue, this.onClickAction);
 
@@ -236,10 +237,10 @@ class FinishSelectionScreenState extends State<FinishSelectionScreen> {
   }
 
   onContinueWithoutProtectedWarranty() {
-    widget.onClickAction(_parcelSliderValue, _warrantySliderValue);
+    widget.onClickAction(_parcelSliderValue, _warrantySliderValue, false);
   }
 
   onContinueWithProtectedWarranty() {
-    widget.onClickAction(_parcelSliderValue, _warrantySliderValue);
+    widget.onClickAction(_parcelSliderValue, _warrantySliderValue, true);
   }
 }

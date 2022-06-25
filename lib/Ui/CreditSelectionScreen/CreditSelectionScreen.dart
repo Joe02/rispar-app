@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
-import 'package:risparapp/Widgets/DefaultSubmitButton.dart';
+import 'package:risparapp/Ui/Widgets/DefaultSubmitButton.dart';
 
-import '../strings.dart';
+import '../../strings.dart';
+
 
 class CreditSelectionScreen extends StatefulWidget {
   dynamic Function(double?) onClickAction;
@@ -213,5 +214,11 @@ class CreditSelectionScreenState extends State<CreditSelectionScreen> {
         _validator = false;
       });
     }
+  }
+
+  @override
+  void dispose() {
+    _inputController.dispose();
+    super.dispose();
   }
 }

@@ -1,7 +1,7 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
-import 'package:risparapp/UserInfoScreen/UserInfoScreen.dart';
+import 'package:risparapp/Ui/UserInfoScreen/UserInfoScreen.dart';
 
 void main() {
   runApp(const RisparApp());

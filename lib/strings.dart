@@ -35,3 +35,12 @@ const String finishSelectionTitleWarrantyLabel = "Escolha o ";
 const String finishSelectionSubTitleWarrantyLabel = "percentual de garantia";
 const String finishSelectionContinueWithoutProtectedWarranty = "Continuar sem garantia";
 const String finishSelectionContinueWithProtectedWarranty = "Adicionar garantia";
+
+// Request waiting screen
+const String requestWaitingTitleLabel = "Aguarde um momento";
+const String requestWaitingSubTitleLabel = "Estamos simulando seu pedido de crédito Rispar...";
+const String requestWaitingErrorTitleLabel = "Um erro ocorreu durante a requisição";
+const String requestWaitingErrorSubTitleLabel = "Gostaria de tentar novamente?";
+const String requestWaitingSuccessTitleLabel = "Sucesso!";
+const String requestWaitingSucessSubTitleLabel = "Aguarde enquanto redirecionamos você para os resultados";
+const String requestWaitingRedoRequestLabel = "Refazer";
