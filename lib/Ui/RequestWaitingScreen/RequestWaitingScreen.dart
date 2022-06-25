@@ -35,6 +35,7 @@ class RequestWaitingScreenState extends State<RequestWaitingScreen> {
             reEnableProgressBar,
             newSimulation,
             jsonResponse,
+            widget.creditBodyInfo.amount,
           )
         : FutureBuilder(
             future: postCreditRequest(),
@@ -53,6 +54,7 @@ class RequestWaitingScreenState extends State<RequestWaitingScreen> {
                     reEnableProgressBar,
                     newSimulation,
                     jsonResponse,
+                    widget.creditBodyInfo.amount,
                   );
                 } else {
                   return buildLoadingScreenWidgets();

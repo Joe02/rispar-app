@@ -44,6 +44,9 @@ class UserInfoScreenState extends State<UserInfoScreen> {
 
   buildScreenWidgets() {
     List<Widget> widgetsList = [
+      SizedBox(
+        height: screenOrientation == Orientation.portrait ? 75 : 25,
+      ),
       buildUserScreenImage(),
       SizedBox(
         height: screenOrientation == Orientation.portrait ? 40 : 10,

@@ -18,6 +18,7 @@ class CreditSelectionPager extends StatefulWidget {
 
 class CreditSelectionPagerState extends State<CreditSelectionPager> {
   bool _shouldExhibitProgressBar = true;
+  bool _shouldExhibitExitIcon = false;
   double progressIndicator = 0.3;
   double selectedValue = 0.0;
   int term = 0;
@@ -53,6 +54,25 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
             color: Colors.teal,
           ),
         ),
+        actions: [
+          Visibility(
+            visible: _shouldExhibitExitIcon,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 15.0),
+              child: InkResponse(
+                onTap: () {
+                  _shouldExhibitExitIcon = false;
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  Icons.close,
+                  color: Colors.teal,
+                  size: 30,
+                ),
+              ),
+            ),
+          )
+        ],
         title: SizedBox(
           width: screenOrientation == Orientation.portrait
               ? screenHeight * 0.30
@@ -69,6 +89,7 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
         elevation: 0,
       ),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: _controller,
         allowImplicitScrolling: false,
         children: [
@@ -80,16 +101,15 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
             submitCreditRequest,
           ),
           RequestWaitingScreen(
-            userCredentials,
-            CreditBodyInfo(
-              ltv,
-              selectedValue,
-              term,
-              hasProtectedCollateral,
-            ),
-            onRequestSuccess,
-            newSimulation
-          ),
+              userCredentials,
+              CreditBodyInfo(
+                ltv,
+                selectedValue,
+                term,
+                hasProtectedCollateral,
+              ),
+              onRequestSuccess,
+              newSimulation),
         ],
       ),
     );
@@ -118,7 +138,6 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
         ltv = warrantyValue.toInt();
         term = parcelValue.toInt();
         hasProtectedCollateral = protectedWarranty;
-
         _controller.nextPage(
           duration: const Duration(
             milliseconds: 500,
@@ -138,6 +157,7 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
         curve: Curves.easeIn,
       );
       progressIndicator = 1.0;
+      _shouldExhibitExitIcon = true;
       _shouldExhibitProgressBar = true;
     });
   }
@@ -152,6 +172,7 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
         curve: Curves.easeIn,
       );
       progressIndicator = 0.3;
+      _shouldExhibitExitIcon = false;
       _shouldExhibitProgressBar = true;
     });
   }
@@ -184,6 +205,7 @@ class CreditSelectionPagerState extends State<CreditSelectionPager> {
           ),
           curve: Curves.ease,
         );
+        _shouldExhibitExitIcon = false;
       },
     );
   }
