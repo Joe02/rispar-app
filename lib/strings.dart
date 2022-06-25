@@ -24,3 +24,14 @@ const String creditSelectionDescriptionThirdLabel = " a ";
 const String creditSelectionDescriptionFourthLabel = "R\$300.000";
 const String creditSelectionInputLabel = "Digite o valor do crédito";
 const String creditSelectionDefaultButtonLabel = "Continuar";
+
+// Finish selection screen
+const String finishSelectionSelectedValueLabel = "Valor escolhido";
+const String finishSelectionInfoTitleLabel = "Garantia protegida";
+const String finishSelectionInfoSubTitleLabel = "Bitcoin caiu? Fique tranquilo! Na garantia protegida você não recebe chamada de margem e não é liquidado.";
+const String finishSelectionTitleParcelLabel = "Escolha a ";
+const String finishSelectionSubTitleParcelLabel = "quantidade de parcelas";
+const String finishSelectionTitleWarrantyLabel = "Escolha o ";
+const String finishSelectionSubTitleWarrantyLabel = "percentual de garantia";
+const String finishSelectionContinueWithoutProtectedWarranty = "Continuar sem garantia";
+const String finishSelectionContinueWithProtectedWarranty = "Adicionar garantia";

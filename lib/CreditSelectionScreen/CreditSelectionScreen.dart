@@ -19,9 +19,7 @@ class CreditSelectionScreenState extends State<CreditSelectionScreen> {
   late double screenHeight;
   late Orientation screenOrientation;
   final TextEditingController _inputController = MoneyMaskedTextController(
-    initialValue: 0.0,
-    thousandSeparator: ","
-  );
+      initialValue: 0.0, thousandSeparator: ",", decimalSeparator: ".");
   bool _validator = true;
 
   @override
@@ -30,27 +28,25 @@ class CreditSelectionScreenState extends State<CreditSelectionScreen> {
     screenWidth = MediaQuery.of(context).size.width;
     screenOrientation = MediaQuery.of(context).orientation;
 
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Container(
-            height: screenHeight * 0.85,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                buildUserScreenLabel(),
-                Visibility(
-                  visible: screenOrientation == Orientation.portrait,
-                  child: const Spacer(),
-                ),
-                buildScreenInput(),
-                Visibility(
-                  visible: screenOrientation == Orientation.portrait,
-                  child: const Spacer(),
-                ),
-                buildSubmitButton(),
-              ],
-            ),
+    return Center(
+      child: SingleChildScrollView(
+        child: SizedBox(
+          height: screenHeight * 0.85,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              buildUserScreenLabel(),
+              Visibility(
+                visible: screenOrientation == Orientation.portrait,
+                child: const Spacer(),
+              ),
+              buildScreenInput(),
+              Visibility(
+                visible: screenOrientation == Orientation.portrait,
+                child: const Spacer(),
+              ),
+              buildSubmitButton(),
+            ],
           ),
         ),
       ),
@@ -206,7 +202,10 @@ class CreditSelectionScreenState extends State<CreditSelectionScreen> {
         setState(() {
           _validator = true;
           widget.onClickAction(
-              double.tryParse(_inputController.text.replaceFirst(",", "")));
+            double.tryParse(
+              _inputController.text.replaceFirst(",", ""),
+            ),
+          );
         });
       }
     } else {

@@ -38,6 +38,7 @@ dependencies:
   email_validator: ^2.0.1
   intl:
   flutter_masked_text: ^0.7.0
+  syncfusion_flutter_sliders: ^20.1.61
 
 dev_dependencies:
   flutter_test:

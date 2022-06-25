@@ -40,7 +40,7 @@ class DefaultSubmitButton extends StatelessWidget {
         primary: primary ?? Colors.teal[300],
         onPrimary: onPrimary ?? Colors.white,
         shadowColor: shadowColor ?? Colors.black,
-        elevation: 5,
+        elevation: primary == Colors.transparent ? 0 : 5,
       ),
       onPressed: buttonAction,
     );
