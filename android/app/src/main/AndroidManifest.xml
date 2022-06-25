@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="joe.rispar.appcom.example.risparapp">
    <application
-        android:label="risparapp"
+        android:label="Rispar Admission App"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -39,6 +39,8 @@ dependencies:
   intl:
   flutter_masked_text: ^0.7.0
   syncfusion_flutter_sliders: ^20.1.61
+  requests: ^4.4.1
+  loading_animation_widget:
 
 dev_dependencies:
   flutter_test:

@@ -2,10 +2,11 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:risparapp/Widgets/DefaultSubmitButton.dart';
+import 'package:risparapp/Models/UserCredentials.dart';
+import 'package:risparapp/Ui/Widgets/DefaultSubmitButton.dart';
 
+import '../../strings.dart';
 import '../CreditSelectionPager/CreditSelectionPager.dart';
-import '../strings.dart';
 
 class UserInfoScreen extends StatefulWidget {
   @override
@@ -43,6 +44,9 @@ class UserInfoScreenState extends State<UserInfoScreen> {
 
   buildScreenWidgets() {
     List<Widget> widgetsList = [
+      SizedBox(
+        height: screenOrientation == Orientation.portrait ? 75 : 25,
+      ),
       buildUserScreenImage(),
       SizedBox(
         height: screenOrientation == Orientation.portrait ? 40 : 10,
@@ -173,6 +177,8 @@ class UserInfoScreenState extends State<UserInfoScreen> {
                     ? userInfoEmailError
                     : userInfoNameError,
           ),
+          keyboardType:
+              emailInput ? TextInputType.emailAddress : TextInputType.name,
         ),
       ),
     );
@@ -192,7 +198,12 @@ class UserInfoScreenState extends State<UserInfoScreen> {
           Navigator.push(
             context,
             CupertinoPageRoute(
-              builder: (context) => CreditSelectionPager(),
+              builder: (context) => CreditSelectionPager(
+                UserCredentials(
+                  _nameController.text,
+                  _emailController.text,
+                ),
+              ),
             ),
           );
         }

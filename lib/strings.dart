@@ -35,3 +35,27 @@ const String finishSelectionTitleWarrantyLabel = "Escolha o ";
 const String finishSelectionSubTitleWarrantyLabel = "percentual de garantia";
 const String finishSelectionContinueWithoutProtectedWarranty = "Continuar sem garantia";
 const String finishSelectionContinueWithProtectedWarranty = "Adicionar garantia";
+
+// Request waiting screen
+const String requestWaitingTitleLabel = "Aguarde um momento";
+const String requestWaitingSubTitleLabel = "Estamos simulando seu pedido de crédito Rispar...";
+const String requestWaitingErrorTitleLabel = "Um erro ocorreu durante a requisição";
+const String requestWaitingErrorSubTitleLabel = "Gostaria de tentar novamente?";
+const String requestWaitingSuccessTitleLabel = "Sucesso!";
+const String requestWaitingSucessSubTitleLabel = "Aguarde enquanto redirecionamos você para os resultados";
+const String requestWaitingRedoRequestLabel = "Refazer";
+
+//Request result screen
+const String requestResultLabel = "Resultado da simulação";
+const String requestResultNewSimulationLabel = "Nova simulação";
+const String requestResultFirstFieldLabel = "Valor escolhido";
+const String requestResultSecondFieldLabel = "Garantia";
+const String requestResultThirdFieldLabel = "Taxa de juros";
+const String requestResultFourthFieldLabel = "Percentual de garantia";
+const String requestResultFifthFieldLabel = "Primeiro vencimento";
+const String requestResultSixthFieldLabel = "IOF";
+const String requestResultSeventhFieldLabel = "Tarifa de plataforma";
+const String requestResultEighthFieldLabel = "Total financiado";
+const String requestResultNinthFieldLabel = "CET mensal";
+const String requestResultTenthFieldLabel = "CET anual";
+const String requestResultEleventhFieldLabel = "Cotação do BTC";
