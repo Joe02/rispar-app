@@ -1,16 +1,25 @@
-# risparapp
+# Rispar Admission App
 
 Rispar application test app.
 
-## Getting Started
+## Fluxo
 
-This project is a starting point for a Flutter application.
+Adição de dados do usuário;
+Seleção de valor de crédito;
+Escolha de parcelas e percentual da garantia;
+Exibição dos dados da simulação.
 
-A few resources to get you started if this is your first Flutter project:
+### Cor primária do App
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Colors.teal
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Bibliotecas utilizadas
+
+cupertino_icons: ^1.0.2
+flutter_svg: ^1.0.3
+email_validator: ^2.0.1
+intl:
+flutter_masked_text: ^0.7.0
+syncfusion_flutter_sliders: ^20.1.61
+requests: ^4.4.1
+loading_animation_widget:
